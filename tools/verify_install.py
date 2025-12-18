@@ -94,7 +94,7 @@ print("-" * 80)
 
 async def test_postgres():
     try:
-        from src.modules.portals.base_loader import PostgresConnectionPool
+        from src.modules.portals.load.base_loader import PostgresConnectionPool
         import os
         
         # Mostrar configuración

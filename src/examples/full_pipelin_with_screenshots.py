@@ -3,7 +3,7 @@ Pipeline ETL completo: Extract → Score → Save + Screenshot
 """
 import asyncio
 import argparse
-from src.modules.portals.base_loader import PostgresConnectionPool
+from src.modules.portals.load.base_loader import PostgresConnectionPool
 from src.modules.portals.loader_factory import create_loader
 from src.modules.portals.factory import create_scraper
 from src.core.etl_event_system import PortalType
