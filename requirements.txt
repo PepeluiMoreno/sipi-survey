@@ -40,36 +40,7 @@ nest-asyncio>=1.5.8
 # Testing
 pytest>=7.4.0
 pytest-asyncio>=0.21.0
-```
+pytest-asyncio>=0.21.0
 
-## 8. Estructura final de directorios
-```
-sipi-etl/
-├── src/
-│   ├── core/
-│   │   ├── __init__.py
-│   │   ├── config.py                    # ✅ NUEVO
-│   │   └── etl_event_system.py
-│   └── modules/
-│       └── portals/
-│           ├── __init__.py
-│           ├── base_loader.py           # ✅ ACTUALIZADO
-│           ├── base_scraper.py
-│           ├── factory.py
-│           ├── loader_factory.py        # ✅ NUEVO
-│           ├── redis_cache.py           # ✅ NUEVO
-│           └── idealista/
-│               ├── __init__.py
-│               ├── scraper.py
-│               ├── load/
-│               │   ├── __init__.py
-│               │   └── loader.py        # ✅ ACTUALIZADO
-│               └── transform/
-│                   ├── __init__.py      # ✅ ACTUALIZADO
-│                   ├── scorer.py        # ✅ NUEVO
-│                   ├── overpass_queries.py  # ✅ NUEVO
-│                   └── osm_matcher.py   # ✅ NUEVO
-├── notebooks/
-│   └── test_pipeline.ipynb
-├── requirements.txt                      # ✅ ACTUALIZADO
-└── .env
+# Core Domain
+sipi-core>=0.1.0
