@@ -20,17 +20,17 @@ from sipi.db.models.actores import Diocesis, RegistroPropiedad
 from sipi.db.models.geografia import ComunidadAutonoma, Provincia, Municipio
 from sipi.db.models.tipologias import TipoInmueble, TipoCertificacionPropiedad
 
-from .mapper import CensusMapper
+from .mapper import listado_ceeMapper
 
 logger = logging.getLogger(__name__)
 
 
-class CensusLoader:
+class listado_ceeLoader:
     """Carga datos del censo de inmuebles desde archivos CSV"""
 
     def __init__(self, session: AsyncSession):
         self.session = session
-        self.mapper = CensusMapper()
+        self.mapper = listado_ceeMapper()
 
         # Caches para evitar queries repetidas
         self._cache_comunidades: Dict[str, str] = {}  # nombre -> id

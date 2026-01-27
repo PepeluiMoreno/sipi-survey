@@ -16,7 +16,7 @@ from sipi.db.models.inmuebles import EstadoCicloVida, GeoQuality
 logger = logging.getLogger(__name__)
 
 
-class CensusMapper:
+class listado_ceeMapper:
     """Mapea datos del censo CSV a modelo de base de datos"""
 
     # Mapeo de columnas CSV a campos del modelo

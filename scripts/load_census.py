@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent / "sipi-core" / "src"
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from sipi.db.sessions import async_session_maker
-from modules.census.loader import CensusLoader
+from modules.census.loader import listado_ceeLoader
 
 # Configurar logging
 logging.basicConfig(
@@ -40,7 +40,7 @@ async def load_file(file_path: Path, batch_size: int, dry_run: bool):
     logger.info(f"Procesando archivo: {file_path}")
 
     async with async_session_maker() as session:
-        loader = CensusLoader(session)
+        loader = listado_ceeLoader(session)
         stats = await loader.load_from_csv(file_path, batch_size, dry_run)
 
         logger.info("=" * 60)
@@ -77,7 +77,7 @@ async def load_directory(dir_path: Path, batch_size: int, dry_run: bool):
         logger.info(f"{'='*60}")
 
         async with async_session_maker() as session:
-            loader = CensusLoader(session)
+            loader = listado_ceeLoader(session)
             stats = await loader.load_from_csv(csv_file, batch_size, dry_run)
 
             # Acumular estadísticas
