@@ -11,7 +11,7 @@ from typing import Dict, Any, Optional
 from datetime import datetime
 import logging
 
-from sipi.db.models.inmuebles import EstadoCicloVida, GeoQuality
+from sipi_core.db.models.inmuebles import EstadoCicloVida, GeoQuality
 
 logger = logging.getLogger(__name__)
 

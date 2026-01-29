@@ -29,10 +29,10 @@ load_dotenv(dotenv_path)
 # Agregar sipi-core al path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / "sipi-core" / "src"))
 
-from sipi.db.sessions import async_session_maker
-from sipi.db.models.geografia import ComunidadAutonoma, Provincia, Municipio
-from sipi.db.models.tipologias import TipoInmueble
-from sipi.db.models.actores import RegistroPropiedad
+from sipi_core.db.sessions import async_session_maker
+from sipi_core.db.models.geografia import ComunidadAutonoma, Provincia, Municipio
+from sipi_core.db.models.tipologias import TipoInmueble
+from sipi_core.db.models.actores import RegistroPropiedad
 from sqlalchemy import select, text
 
 logging.basicConfig(

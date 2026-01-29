@@ -12,11 +12,11 @@ def refactor_file(filepath):
     # Replace imports
     # sipi-etl might have been importing from 'app.db' if it was sharing code, 
     # OR it might be defining its own models.
-    # Assuming it needs to import from sipi.db now.
+    # Assuming it needs to import from sipi_core.db now.
     
     # Common replacements if they were copying models or using a shared path
-    new_content = re.sub(r'from app\.db', 'from sipi.db', new_content)
-    new_content = re.sub(r'import app\.db', 'import sipi.db', new_content)
+    new_content = re.sub(r'from app\.db', 'from sipi_core.db', new_content)
+    new_content = re.sub(r'import app\.db', 'import sipi_core.db', new_content)
     
     # Also check for relative imports that might have been used if code was copied
     
