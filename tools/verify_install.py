@@ -143,12 +143,7 @@ async def test_postgres():
                         print(f"  ⚠ Tabla 'portals.{table_name}' no existe")
                         print(f"    Ejecuta: init_db_real.py")
             else:
-                print("  ⚠ Esquema 'portals' no existe")
-                print("    (Ejecuta init_db_real.py para crear el esquema)")
-        
-        await PostgresConnectionPool.close_pool()
-        print("\n✓ PostgreSQL funcionando correctamente")
-        return True
+                return True
         
     except Exception as e:
         print(f"\n❌ ERROR conectando a PostgreSQL: {e}")
